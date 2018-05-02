@@ -72,9 +72,7 @@
   export default {
     comments: {},
     data() {
-      return {
-
-      };
+      return {};
     },
     created() {
       // console.log(this.$route.query.nid);
@@ -88,19 +86,18 @@
           console.log(res);
         } else {
           console.log(res.data);
-        };
+        }
       })();
     },
-    methods: {
-
-    }
+    methods: {}
   };
 
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   .goodsDetail {
-    width 100%;
-    height 100%;
+    width: 100%;
+    height: 100%;
+
     .no_network {
       width: 4.5rem;
       height: 5rem;
@@ -110,41 +107,47 @@
       left: 50%;
       margin-top: -2.5rem;
       margin-left: -2.25rem;
+
       img {
         width: 100%;
       }
+
       span {
         margin-top: 0.08rem;
-        font-size: 0.30rem;
+        font-size: 0.3rem;
         color: #999999;
       }
     }
   }
 
   .section {
-
     width: 100%;
     height: 100%;
+
     .comment {
       position: relative;
-      padding: 0.28rem 0.32rem 0.0rem 0.32rem;
+      padding: 0.28rem 0.32rem 0rem 0.32rem;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+
       .pic {
         width: 2rem;
         height: 2rem;
         float: left;
       }
+
       .content {
         position: relative;
-        padding-left: 0.20rem;
+        padding-left: 0.2rem;
         width: 5rem;
+
         >span {
           display: flex;
           font-size: 0.28rem;
           color: #333333;
           line-height: 0.36rem;
+
           &.title {
             word-break: break-all;
             display: -webkit-box;
@@ -152,6 +155,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
           }
+
           &.orldpirce {
             font-size: 0.28rem;
             color: #AFAFAF;
@@ -160,23 +164,28 @@
           }
         }
       }
+
       .JG {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         position: absolute;
         bottom: -0.05rem;
+
         div {
-          font-size: 0.30rem;
+          font-size: 0.3rem;
           color: #FF5548;
+
           &:first-of-type {
             margin-right: 0.12rem;
           }
         }
       }
     }
+
     .coupon {
       position: relative;
+
       .content {
         // width: 100%;
         height: 1.64rem;
@@ -184,34 +193,41 @@
         flex-direction: row;
         justify-content: space-around;
         margin: 0.4rem 0.3rem;
+
         .left {
           width: 4.83rem;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
+
           .pirce {
             height: 0.6rem;
             display: flex;
             flex-direction: row;
             align-items: flex-end;
-            margin-bottom: 0.20rem;
+            margin-bottom: 0.2rem;
+
             >span {
               color: #fff;
+
               &:first-of-type {
                 font-size: 0.26rem;
               }
+
               &:last-of-type {
-                font-size: 0.60rem;
-                line-height: 0.60rem;
+                font-size: 0.6rem;
+                line-height: 0.6rem;
               }
             }
           }
+
           .data {
             font-size: 0.26rem;
             color: #ffe9d6;
           }
         }
+
         .right {
           width: 2.05rem;
           font-size: 0.32rem;
@@ -221,119 +237,141 @@
           box-sizing: border-box;
         }
       }
+
       .Subscribed {
         height: 0.8rem;
         width: 6.91rem;
-        margin: 0.30rem auto;
+        margin: 0.3rem auto;
         font-size: 0.34rem;
-        line-height: 0.80rem;
+        line-height: 0.8rem;
         text-align: center;
         color: #fff;
         background: linear-gradient(to right, #ff8e6b, #ff756a);
-        border-radius: 0.10rem
+        border-radius: 0.1rem;
       }
+
       .line {
         // position: absolute;
         // bottom: 0;
         width: 100%;
-        height: 0.20rem;
+        height: 0.2rem;
         background-color: #f5f5f6;
       }
     }
+
     .fanli {
       >.title {
-        padding: 0 0.30rem;
+        padding: 0 0.3rem;
         font-size: 0.34rem;
         color: #333333;
-        margin-top: 0.30rem;
+        margin-top: 0.3rem;
         line-height: 0.34rem;
       }
+
       .rail {
-        padding: 0 0.30rem;
+        padding: 0 0.3rem;
+
         .cont {
-          margin-top: 0.40rem;
+          margin-top: 0.4rem;
           width: 100%;
-          height: 0.70rem;
+          height: 0.7rem;
           background-color: #fff3f0;
           display: flex;
           flex-direction: row;
           align-items: center;
+
           img {
             width: 0.42rem;
             height: 0.46rem;
-            margin-left: 0.30rem;
-            margin-right: 0.20rem;
+            margin-left: 0.3rem;
+            margin-right: 0.2rem;
           }
+
           span {
             font-size: 0.24rem;
             color: #FF887F;
           }
         }
       }
+
       .text {
-        padding: 0 0.30rem;
+        padding: 0 0.3rem;
         display: flex;
         flex-direction: column;
         margin-bottom: 0.24rem;
+
         span {
           font-size: 0.28rem;
-          line-height: 0.40rem;
+          line-height: 0.4rem;
           color: #666;
+
           &:first-of-type {
-            margin-top: 0.30rem;
-            margin-bottom: 0.20rem;
+            margin-top: 0.3rem;
+            margin-bottom: 0.2rem;
             line-height: 0.28rem;
             color: #333;
           }
         }
       }
+
       .line {
         width: 100%;
-        height: 0.20rem;
+        height: 0.2rem;
         background-color: #F7F7F7;
       }
     }
+
     .trendChart {
-      padding: 0 0.30rem;
+      padding: 0 0.3rem;
+
       .top {
         width: 100%;
         display: flex;
         flex-direction: column;
+
         .title {
           font-size: 0.34rem;
           color: #333;
           line-height: 0.34rem;
-          margin-top: 0.30rem;
+          margin-top: 0.3rem;
         }
+
         .buyIndex {
           font-size: 0.28rem;
           line-height: 0.28rem;
-          margin-top: 0.40rem;
+          margin-top: 0.4rem;
           color: #333;
+
           span {
             color: #FF5548;
           }
         }
-        @-webkit-keyframes animate-positive {
+
+        @keyframes animate-positive {
           0% {
             width: 0;
           }
+
           100% {
             width: 80%;
           }
         }
+
         @keyframes animate-positive {
           0% {
             width: 0;
           }
         }
+
         .progressBar {
           width: 100%;
+
           .Bar {
             margin-top: 0.6rem;
             width: 100%;
             height: 0.16rem;
             position: relative;
+
             .progress_jin {
               height: 7px;
               background: #FFEFD1;
@@ -342,6 +380,7 @@
               overflow: visible;
               border: 1px solid #FCCA59;
               position: relative;
+
               .progress-bar {
                 float: left;
                 width: 0;
@@ -353,12 +392,12 @@
                 text-align: center;
                 background-image: linear-gradient(to right, #FFD44E, #F13940);
                 background-image: -webkit-linear-gradient(to right, #FFD44E, #F13940);
-                -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-                box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-                -webkit-transition: width .6s ease;
-                -o-transition: width .6s ease;
-                transition: width .6s ease;
-                -moz-transition: width .6s ease;
+                -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+                -webkit-transition: width 0.6s ease;
+                -o-transition: width 0.6s ease;
+                transition: width 0.6s ease;
+                -moz-transition: width 0.6s ease;
                 box-shadow: none;
                 border-radius: 0;
                 position: relative;
@@ -367,6 +406,7 @@
                 -o-animation: animate-positive 2s;
                 -moz-transition: animate-positive 2s;
                 border-radius: 5px;
+
                 .progress-value {
                   width: 39px;
                   height: 20px;
@@ -381,8 +421,9 @@
                   position: absolute;
                   bottom: 18px;
                   right: -15px;
+
                   &::after {
-                    content: "";
+                    content: '';
                     border-top: 7px solid #F13940;
                     border-left: 7px solid transparent;
                     border-right: 7px solid transparent;
@@ -393,15 +434,17 @@
                 }
               }
             }
+
             .des {
               position: absolute;
               top: 0;
               text-align: center;
               font-size: 0.26rem;
               color: #666;
-              width: 0.80rem;
+              width: 0.8rem;
               height: 0.44rem;
             }
+
             .progress {
               position: absolute;
               bottom: 0;
@@ -409,29 +452,35 @@
               width: 100%;
             }
           }
+
           >span {
             margin-top: 0.2rem;
             font-size: 0.28rem;
-            line-height: 0.40rem;
+            line-height: 0.4rem;
             display: inherit;
           }
         }
       }
+
       .canTop {
         margin-top: 0.6rem;
-        margin-bottom: 0.60rem;
+        margin-bottom: 0.6rem;
+
         .tendency {
           float: left;
           font-size: 0.28rem;
-          margin-bottom: 0.60rem;
+          margin-bottom: 0.6rem;
+
           span {
             color: #00d093;
           }
         }
+
         .minpirce {
           float: right;
           font-size: 0.28rem;
-          margin-bottom: 0.60rem;
+          margin-bottom: 0.6rem;
+
           span {
             color: #FF5548;
           }
@@ -448,6 +497,7 @@
     bottom: 2.28rem;
     right: 0.08rem;
     overflow: hidden;
+
     img {
       width: 100%;
       height: 100%;
@@ -467,7 +517,7 @@
     background-color: black;
     z-index: 1001;
     -moz-opacity: 0.8;
-    opacity: .80;
+    opacity: 0.8;
   }
 
   .white_content {
@@ -476,28 +526,32 @@
     top: 40%;
     left: 50%; // width: 5.40rem;
     // height: 1.48rem;
-    margin-left: -3.270rem;
+    margin-left: -3.27rem;
     margin-top: -0.24rem;
     border-radius: 0.1rem;
     background-color: white;
     z-index: 1002;
     overflow: auto;
+
     .content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0.50rem 0.52rem;
+      padding: 0.5rem 0.52rem;
+
       span {
         font-size: 0.34rem;
         line-height: 0.34rem;
         margin-bottom: 0.16rem;
         color: #999;
+
         &:first-of-type {
           color: #333;
-          margin-bottom: 0.30rem;
+          margin-bottom: 0.3rem;
         }
       }
     }
+
     .btn {
       display: flex;
       flex-direction: row;
@@ -505,6 +559,7 @@
       width: 100%;
       height: 0.92rem;
       border-top: 0.01rem solid #ddd;
+
       button {
         line-height: 0.92rem;
         text-align: center;
@@ -514,10 +569,12 @@
         background-color: white;
         width: 50%;
         height: 0.91rem;
+
         &:last-of-type {
           color: #FF756A;
         }
       }
+
       .line {
         position: absolute;
         left: 50%;
@@ -538,28 +595,31 @@
 
   .download {
     z-index: 2;
-    height: 0.90rem;
+    height: 0.9rem;
     width: 100%;
-    background-color: rgba( 255, 255, 255, .45);
+    background-color: rgba(255, 255, 255, 0.45);
+
     img {
-      margin-left: 0.30rem;
+      margin-left: 0.3rem;
       width: 0.64rem;
       height: 0.62rem;
     }
+
     span {
       margin-left: 0.24rem;
-      font-size: 0.30rem;
+      font-size: 0.3rem;
       color: #333;
-      line-height: 0.90rem;
+      line-height: 0.9rem;
     }
+
     button {
       border: none;
       float: right;
-      margin-left: 0.40rem;
-      width: 1.20rem;
+      margin-left: 0.4rem;
+      width: 1.2rem;
       height: 0.62rem;
-      border-radius: 0.30rem;
-      font-size: 0.30rem;
+      border-radius: 0.3rem;
+      font-size: 0.3rem;
       color: #fff;
       background-color: #ff756a;
       text-align: center;
