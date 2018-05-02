@@ -59,7 +59,7 @@ app.use(require('connect-history-api-fallback')())
 
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
-app.use(staticPath, express.static('./static'))
+app.use(express.static('./static'))
 
 module.exports = app.listen(port, function (err) {
   if (err) {
