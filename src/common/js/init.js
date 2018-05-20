@@ -1,5 +1,4 @@
 'use strict';
-console.log('初始化rem');
 var doc = window.document;
 var docEl = doc.documentElement;
 var tid;
@@ -18,5 +17,5 @@ window.addEventListener('pageshow', function (e) {
     tid = setTimeout(refreshRem, 0);
   }
 }, false);
-
+console.log('初始化rem');
 refreshRem();
