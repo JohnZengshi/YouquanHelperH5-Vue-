@@ -5,7 +5,7 @@
       <span>哎呀，这东西被外星人带走了...</span>
     </div>
     <div class="section">
-      <!--download-start-->
+      <!-- 下载条 -->
       <div id="download" class="hide">
         <div class="download flex flex-align-center flex-r ">
           <img src="/images/logo.png" alt="">
@@ -16,23 +16,43 @@
         background-color: #f5f5f6;">
         </div>
       </div>
-
-      <!--download-end-->
-      <div class='comment' id="comment">
-
-
-
-      </div>
-
-      <!-- 没订阅 -->
-      <div class='coupon' id="coupon"></div>
-
-      <!-- 已订阅 -->
-      <!-- <div class='coupon' id="coupon" style="display:block;"></div> -->
+      <!-- 商品信息 -->
+      <v-comment :goods-info="goodsInfo"></v-comment>
+      <!-- 优惠券和返利 -->
+      <!-- <div class="coupon">
+        <div class="voucher">
+          <div class="line"></div>
+          <span class="title" style="padding: 0 0.30rem;             display:block;         font-size: 0.34rem;         color: #333333;         margin-top: 0.30rem;         margin-bottom: 0.50rem;         line-height: 0.34rem;">识惠福利
+            <a class="rebatehelp" style="float:right;font-size:0.24rem;color:#808080;vertical-align: top">如何返利？</a>
+          </span>
+          <div class="coupons coupon_img_1 anp">
+            <div class="right">
+              <span class="text">优惠券</span>
+              <span class="data">有效期： 2018.05.17至 2018.07.13 </span>
+            </div>
+            <div class="left">
+              <div class="pirce">
+                <div>
+                  <span class="i">￥</span>
+                  <span class="text"> 10 </span>
+                </div>
+              </div>
+              <span class="icon">
+                <span>立即领取</span>
+              </span>
+            </div>
+          </div>
+          <div class="coupons coupon_img_2 anp">
+            <span class="text">领券后下单</span>
+            <span class="pirce">预计可领
+              <span>
+                <span>¥</span> 10.63 </span>返利红包</span>
+          </div>
+          <div class="line"></div>
+        </div>
+      </div> -->
 
       <div class="fanli" id="fanli">
-
-
 
       </div>
 
@@ -69,23 +89,28 @@
   import {
     getBaseInfo
   } from '../api/api';
+  import comment from '../components/goodsDetail/comment.vue';
   export default {
-    comments: {},
+    components: {
+      'v-comment': comment
+    },
     data() {
-      return {};
+      return {
+        goodsInfo: {}
+      };
     },
     created() {
-      // console.log(this.$route.query.nid);
       // 获取基本数据
       (async () => {
+        let nid = this.$route.query.nid ? this.$route.query.nid : '1000' + this.$route.query.itemid;
         let res = await getBaseInfo({
-          nid: this.$route.query.nid
-          // nid: 1000563538534386
+          nid: nid
         });
         if (res.state === 'false') {
           console.log(res);
         } else {
-          console.log(res.data);
+          this.goodsInfo = res.data;
+          // console.log(res.data);
         }
       })();
     },
@@ -123,65 +148,6 @@
   .section {
     width: 100%;
     height: 100%;
-
-    .comment {
-      position: relative;
-      padding: 0.28rem 0.32rem 0rem 0.32rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-
-      .pic {
-        width: 2rem;
-        height: 2rem;
-        float: left;
-      }
-
-      .content {
-        position: relative;
-        padding-left: 0.2rem;
-        width: 5rem;
-
-        >span {
-          display: flex;
-          font-size: 0.28rem;
-          color: #333333;
-          line-height: 0.36rem;
-
-          &.title {
-            word-break: break-all;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-          }
-
-          &.orldpirce {
-            font-size: 0.28rem;
-            color: #AFAFAF;
-            text-decoration: line-through;
-            margin-top: 0.5rem;
-          }
-        }
-      }
-
-      .JG {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        position: absolute;
-        bottom: -0.05rem;
-
-        div {
-          font-size: 0.3rem;
-          color: #FF5548;
-
-          &:first-of-type {
-            margin-right: 0.12rem;
-          }
-        }
-      }
-    }
 
     .coupon {
       position: relative;
@@ -524,8 +490,7 @@
     display: none;
     position: absolute;
     top: 40%;
-    left: 50%; // width: 5.40rem;
-    // height: 1.48rem;
+    left: 50%;
     margin-left: -3.27rem;
     margin-top: -0.24rem;
     border-radius: 0.1rem;
